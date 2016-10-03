@@ -15,29 +15,33 @@ import java.util.Set;
 
 public class Mainprogram 
 {	
-	  public static int binarysearch(int[] arr, int start, int end, int element )
-	  {
-		  int mid=((start+end)/2);
-		  if(arr[mid]==element)
-		  {
-			  return mid;
-		  }
-		  else if(element>arr[mid]){
-			 return binarysearch(arr,mid+1,arr.length,element);
-		  }
-		  else if(element<arr[mid])
-		  {
-			  return binarysearch(arr,0,mid-1,element);
-		  }
-		return -1;
-	  }
-	  
+	
 	  public static void main(String[] args) 
 	  {
 	     int[] arr={2,3,4,10,40};
 	     int element=10;
-	     int result= binarysearch(arr,0,((arr.length)-1),element);
-	     System.out.println(result);
+	     int start=0;
+	     int end=arr.length;
+	     int mid=0;
+	     while(start!=end)
+	     {
+	    	 mid=(start+end)/2;
+	    	 if(arr[mid]==element)
+	    	 {
+	    		 System.out.println(mid);
+	    		 break;
+	    	 }
+	    	 else if(element>arr[mid])
+	    	 {
+	    		 start=mid+1;
+	    	 }
+	    	 else if(element<arr[mid])
+	    	 {
+	    		 end=mid;
+	    	 }
+	    	
+	     }
+	     
 		  
 	  }
 		
